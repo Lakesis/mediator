@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Mediator</title>
+	<meta name="description" content="">
+	<meta name="author" content="Pablo Gil Torres">
+	<meta name="viewport" content="width=device-width">
+	
+	<script src="mediator.js"></script>
+	
+
+
+	
+</head>
+<body id="body">
+
+	<div id="test" style="width: 200px; height: 200px; border: 1px solid black">
+		<a href="" id="link">Prueba</a>
+	</div>
+	
+	<script>
+		var testObject = {
+			fire : function() { mediator.publish("algo");},
+			react : function(){console.log("ieeeee");}
+		};
+		
+		mediator.on('algo', function(){
+			testObject.react();
+		})
+		
+		testObject.fire();
+	</script>
+	
+</body>
+</html>
